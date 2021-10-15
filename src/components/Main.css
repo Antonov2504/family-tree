@@ -3,12 +3,16 @@
 }
 
 .react-flow__node {
-  width: 6.5vw;
+  width: 95px;
   box-sizing: border-box;
 }
 
 .react-flow__node-default, .react-flow__node-input, .react-flow__node-output {
   font-size: 8px;
+}
+
+.main {
+  height: 100vh;
 }
 
 .birthday {

@@ -28,34 +28,36 @@ function Main({ onCardClick }) {
   }
 
   return (
-    <ReactFlow
-      elements={elements}
-      onElementsRemove={onElementsRemove}
-      onConnect={onConnect}
-      onLoad={onLoad}
-      onElementClick={onElementClick}
-      snapToGrid={true}
-      snapGrid={[15, 15]}
-    >
-      <MiniMap
-        nodeStrokeColor={(n) => {
-          if (n.style?.background) return n.style.background;
-          if (n.type === 'input') return '#0041d0';
-          if (n.type === 'output') return '#ff0072';
-          if (n.type === 'default') return '#1a192b';
+    <section className="main">
+      <ReactFlow
+        elements={elements}
+        onElementsRemove={onElementsRemove}
+        onConnect={onConnect}
+        onLoad={onLoad}
+        onElementClick={onElementClick}
+        snapToGrid={true}
+        snapGrid={[15, 15]}
+      >
+        <MiniMap
+          nodeStrokeColor={(n) => {
+            if (n.style?.background) return n.style.background;
+            if (n.type === 'input') return '#0041d0';
+            if (n.type === 'output') return '#ff0072';
+            if (n.type === 'default') return '#1a192b';
 
-          return '#eee';
-        }}
-        nodeColor={(n) => {
-          if (n.style?.background) return n.style.background;
+            return '#eee';
+          }}
+          nodeColor={(n) => {
+            if (n.style?.background) return n.style.background;
 
-          return '#fff';
-        }}
-        nodeBorderRadius={2}
-      />
-      <Controls />
-      <Background color="#aaa" gap={16} />
-    </ReactFlow>
+            return '#fff';
+          }}
+          nodeBorderRadius={2}
+        />
+        <Controls />
+        <Background color="#aaa" gap={16} />
+      </ReactFlow>
+    </section>
   );
 };
 
